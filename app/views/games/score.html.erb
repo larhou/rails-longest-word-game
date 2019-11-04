@@ -1,0 +1,21 @@
+<h1>Result</h1>
+
+<% if @word_in_letters %>
+
+  <% if @is_english_word %>
+
+    <p><strong>Congratulations!</strong> <%= @attempt %> is a valid English word and your points are <%=@points%>!</p>
+
+  <% else %>
+
+    <p>Sorry but <strong><%= @attempt %> </strong> does not seem to be a valid English word...</p>
+
+  <% end %>
+
+<% else %>
+
+  <p>Sorry but <strong><%= @attempt %> </strong> cannot be built out of <%=@letters%></p>
+
+<% end %>
+
+<p><%= link_to 'Play again', '/new' %></p>
